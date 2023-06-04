@@ -589,7 +589,7 @@
 							<div class="column col-md-12">
 								<!-- Message textarea -->
 								<div class="form-group">
-									<textarea name="InputMessage" id="message" class="form-control" rows="5" placeholder="Message" required="required" data-error="Message is required."></textarea>
+									<textarea id="message" class="form-control" rows="5" placeholder="Message" required="required" data-error="Message is required."></textarea>
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
@@ -598,6 +598,8 @@
 						<button type="submit" class="btn btn-default">Kirim Pesan</button><!-- Send Button -->
 
 					</form>
+				
+				</div>
 					<script src="https://smtpjs.com/v3/smtp.js"></script>
 					<script>
 						funtion sendmail(){
@@ -605,7 +607,7 @@
 							    Host : "smtp.gmail.com",
 							    Username : "autoemailtegar@gmail.com",
 							    Password : "polisi123",
-							    To : 'autoemailtegar@gmail.com',
+							    To : 'tegar.faiz.21@gmail.com',
 							    From : document.getElementById("Email").value,
 							    Subject : "Lowongan Kerja",
 							    Body : "name: "+ document.getElementById("name").value
@@ -618,8 +620,6 @@
 						}
 					</script>
 					<!-- Contact Form end -->
-				</div>
-
 			</div>
 
 		</div>
