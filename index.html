@@ -556,7 +556,7 @@
 
 				<div class="col-md-8">
 					<!-- Contact Form -->
-					<form id="contact-form" class="contact-form mt-6" >
+					<form onsubmit="sendmail(); reset(); return false;" class="contact-form mt-6" >
 
 						
 						<div class="messages"></div>
@@ -598,6 +598,22 @@
 						<button type="submit" name="submit" id="submit" value="Submit" class="btn btn-default">Kirim Pesan</button><!-- Send Button -->
 
 					</form>
+					<script src="https://smtpjs.com/v3/smtp.js"></script>
+					<script>
+						funtion sendmail(){
+							Email.send({
+							    Host : "smtp.gmail.com",
+							    Username : "autoemailtegar@gmail.com",
+							    Password : "polisi123",
+							    To : 'tegar.faiz.21@gmail.com',
+							    From : document.getElementById("Email").value,
+							    Subject : "Lowongan Kerja",
+							    Body : "And this is the body"
+							}).then(
+							  message => alert(message)
+							);
+						}
+					</script>
 					<!-- Contact Form end -->
 				</div>
 
