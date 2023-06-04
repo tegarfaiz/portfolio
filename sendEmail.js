@@ -1,23 +1,23 @@
-const nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
 
 // Ambil informasi pengiriman email dari environment variables
-const toEmail = process.env.TO_EMAIL;
-const fromEmail = process.env.FROM_EMAIL;
-const emailPassword = process.env.EMAIL_PASSWORD;
+var toEmail = process.env.TO_EMAIL;
+var fromEmail = process.env.FROM_EMAIL;
+var emailPassword = process.env.EMAIL_PASSWORD;
 
 // Konfigurasi transporter Nodemailer
-const transporter = nodemailer.createTransport({
+var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: fromEmail,
-    pass: emailPassword,
+    user: 'autoemailtegar@gmail.com',
+    pass: 'polisi123',
   },
 });
 
 // Definisikan options email
-const mailOptions = {
-  from: fromEmail,
-  to: toEmail,
+var mailOptions = {
+  from: 'autoemailtegar@gmail.com',
+  to: 'tegar.faiz.21@gmail.com',
   subject: 'Pesan dari Form Kontak',
   text: 'Ini adalah pesan yang dikirim dari formulir kontak.',
 };
