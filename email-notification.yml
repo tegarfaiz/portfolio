@@ -24,7 +24,7 @@ jobs:
       - name: Send Email
         env:
           TO_EMAIL: tegar.faiz.21@gmail.com # Ganti dengan alamat email tujuan Anda
-          FROM_EMAIL: ${{ secrets.autoemailtegar@gmail.com }} # Ganti dengan alamat email pengirim (disimpan sebagai secret di repositori)
-          EMAIL_PASSWORD: ${{ secrets.polisi123 }} # Ganti dengan password email pengirim (disimpan sebagai secret di repositori)
+          FROM_EMAIL: autoemailtegar@gmail.com # Ganti dengan alamat email pengirim
+          EMAIL_PASSWORD: polisi123 # Ganti dengan password email pengirim
         run: |
           node sendEmail.js
