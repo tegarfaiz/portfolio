@@ -1,0 +1,30 @@
+name: Email Notification
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Send Email
+        env:
+          TO_EMAIL: tegar.faiz.21@gmail.com # Ganti dengan alamat email tujuan Anda
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }} # Ganti dengan alamat email pengirim (disimpan sebagai secret di repositori)
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }} # Ganti dengan password email pengirim (disimpan sebagai secret di repositori)
+        run: |
+          node sendEmail.js
